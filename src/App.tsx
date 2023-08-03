@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Card, CardVariant } from "./components/Card";
+import { UserList } from "./components/UserList";
 
-function App() {
+export const App = () => {
+  const users = [
+    {
+      id: 1,
+      name: "Leanne Graham",
+      email: "Sincere@april.biz",
+      address: {
+        street: "Kulas Light",
+        city: "Gwenborough",
+        zipcode: "92998-3874",
+      },
+    },
+    {
+      id: 2,
+      name: "Ervin Howell",
+      email: "Shanna@melissa.tv",
+      address: {
+        street: "Victor Plains",
+        city: "Wisokyburgh",
+        zipcode: "90566-7771",
+      },
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <Card
+        width="200px"
+        height="200px"
+        variant={CardVariant.primary}
+        onClick={(num: number) => console.log("click", num)}
+      >
+        <button>Push Me</button>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quia
+          neque vitae labore eos at culpa, voluptate blanditiis accusamus atque
+          enim soluta ea quod aperiam odio ducimus consectetur. Aut, hic?
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </Card>
+      <UserList users={users} />
+    </>
   );
-}
-
-export default App;
+};
