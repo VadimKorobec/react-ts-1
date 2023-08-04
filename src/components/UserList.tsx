@@ -10,7 +10,9 @@ export const UserList: FC<UserListProps> = ({ users }) => {
   return (
     <>
       {users.map((user) => (
-        <UserItem key={user.id} user={user} />
+        <ul key={user.id}>
+          <UserItem user={user} />
+        </ul>
       ))}
     </>
   );
